@@ -42,9 +42,9 @@
 
     <servlet-mapping>
         <servlet-name>youtao-sso</servlet-name>
-        <url-pattern>*.html</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
-
+    
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

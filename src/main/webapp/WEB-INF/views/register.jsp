@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+<% request.setAttribute("staticPath", "http://static.youtao.com"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,9 +9,9 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
     <title>注册-个人用户</title>
-    <link type="text/css" rel="stylesheet" href="/css/regist.personal.css"/>
-    <link type="text/css" rel="stylesheet" href="/css/passport.base.css"/>
-    <script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="${staticPath }/css/regist.personal.css"/>
+    <link type="text/css" rel="stylesheet" href="${staticPath }/css/passport.base.css"/>
+    <script type="text/javascript" src="${staticPath }/js/jquery-1.2.6.min.js"></script>
 </head>
 <body>
     <script type="text/javascript">
@@ -79,8 +80,8 @@ function addToFavorite() {
 <!--shortcut end-->
 <div class="w" id="logo">
     <div>
-    	<a href="http://www.taotao.com/">
-    		<img src="/images/youtao-logo.png" alt="优淘网" width="170" height="60"/>
+    	<a href="http://www.youtao.com/">
+    		<img src="${staticPath }/images/youtao-logo.png" alt="优淘网" width="170" height="60"/>
     	</a> <b></b>
     </div>
 </div>
@@ -96,7 +97,7 @@ function addToFavorite() {
         <span style="text-align: right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="flk13"
                                                                                onclick="javascript:location.href=&quot;http://en.360buy.com&quot;+location.search;"
                                                                                href="#">English</a></span> <span>我已经注册，现在就&nbsp;<a
-                href="http://www.taotao.com/user/login.html"
+                href="http://sso.youtao.com/user/login.html"
                 class="flk13">登录</a></span>
         </div>
     </div>
@@ -239,7 +240,7 @@ function addToFavorite() {
                 </div>
             </div>
             <div class="phone">
-                <img width="180" height="180" src="/images/phone-bg.jpg">
+                <img width="180" height="180" src="${staticPath }/images/phone-bg.jpg">
             </div>
                         <span class="clr"></span>
         </form>
@@ -269,11 +270,11 @@ function addToFavorite() {
     <jsp:include page="../commons/footer-links.jsp"></jsp:include>
     <!-- links end -->
 </div>
-<script type="text/javascript" src="/js/register/jd.lib.js"></script>
-<script type="text/javascript" src="/js/register/jdThickBox.js"></script>
-<script type="text/javascript" src="/js/register/jdValidate.js"></script>
-<script type="text/javascript" src="/js/register/jdValidate.emReg.js"></script>
-<script type="text/javascript" src="/js/register/jdValidate.regSuccess.js"></script>
+<script type="text/javascript" src="${staticPath }/js/register/jd.lib.js"></script>
+<script type="text/javascript" src="${staticPath }/js/register/jdThickBox.js"></script>
+<script type="text/javascript" src="${staticPath }/js/register/jdValidate.js"></script>
+<script type="text/javascript" src="${staticPath }/js/register/jdValidate.emReg.js"></script>
+<script type="text/javascript" src="${staticPath }/js/register/jdValidate.regSuccess.js"></script>
 
 
 <script id="box01" type="text/temp">
