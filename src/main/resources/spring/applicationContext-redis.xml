@@ -1,0 +1,23 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	<!-- 连接池配置 -->
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<!-- 最大连接数 -->
+		<property name="maxTotal" value="${redis.maxTotal}" />
+	</bean>
+
+    <!-- jedis分片式连接池 -->
+    <bean class="redis.clients.jedis.ShardedJedisPool">
+    	<constructor-arg index="0" ref="jedisPoolConfig" />
+    	<constructor-arg index="1">
+    		<list>
+    			<bean class="redis.clients.jedis.JedisShardInfo">
+    				<constructor-arg index="0" value="${redis.node1.host}" />
+    				<constructor-arg index="1" value="${redis.node1.port}" />
+    			</bean>
+    		</list>
+    	</constructor-arg>
+    </bean>
+
+</beans>

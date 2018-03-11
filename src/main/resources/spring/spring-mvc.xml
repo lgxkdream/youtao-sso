@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!-- 注解驱动 -->
+	<mvc:annotation-driven>
+		<!-- 自定义消息转换器 -->
+		<mvc:message-converters register-defaults="true">
+			<!-- 自定义消息转换器，设置编码为utf-8，防止responseEntity<String>转换成json对象输出乱码 -->
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<constructor-arg index="0" value="UTF-8"></constructor-arg>
+			</bean>
+			<!-- 支持jsonp的消息转化器 -->
+			<bean class="com.youtao.common.spring.exetend.converter.json.CallbackMappingJackson2HttpMessageConverter">
+				<property name="callbackName" value="callback" />
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+	<!-- Controller的扫描包 -->
+	<context:component-scan base-package="com.youtao.sso.controller" />
+	
+	<!-- 视图解析器 -->
+	<!-- Example: prefix="/WEB-INF/jsp/", suffix=".jsp", viewname="test" -> 
+		"/WEB-INF/jsp/test.jsp" -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+</beans>
