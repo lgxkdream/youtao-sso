@@ -105,7 +105,7 @@
                 <input type="hidden" name="machineCpu" id="machineCpu" value="" class="hide"/>
                 <input type="hidden" name="machineDisk" id="machineDisk" value="" class="hide"/>
                 
-                <div class="item fore3  hide " id="o-authcode">
+                <div class="item fore3 hide" id="o-authcode">
                     <span>验证码</span>
 
                     <div class="item-ifo">
@@ -175,7 +175,7 @@
                 </div>
         </div>
         <div class="free-regist">
-            <span><a href="http://www.youtao.com/user/register.html" clstag="passport|keycount|login|08">免费注册&gt;&gt;</a></span>
+            <span><a href="http://sso.youtao.com/user/register.html" clstag="passport|keycount|login|08">免费注册&gt;&gt;</a></span>
         </div>
     </div>
 </form>
